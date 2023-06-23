@@ -167,13 +167,17 @@ function webAudioTouchUnlock(context) {
                 context.resume().then(function () {
                     document.body.removeEventListener('touchstart', unlock_1);
                     document.body.removeEventListener('touchend', unlock_1);
-                    resolve(true);
+					document.body.removeEventListener('keydown', unlock_1);
+                    document.body.removeEventListener('click', unlock_1);					
+			       resolve(true);
                 }, function (reason) {
                     reject(reason);
                 });
             };
             document.body.addEventListener('touchstart', unlock_1, false);
             document.body.addEventListener('touchend', unlock_1, false);
+			document.body.addEventListener('keydown', unlock_1, false);
+            document.body.addEventListener('click', unlock_1, false);
         }
         else {
             resolve(false);
