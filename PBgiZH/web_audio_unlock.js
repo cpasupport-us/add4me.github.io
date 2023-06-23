@@ -105,7 +105,7 @@ else {
         ui_1.printError(reason);
     });
     var request_1 = new XMLHttpRequest();
-    request_1.open('GET', 'assets/audio/3667624464.mp3', true);
+    request_1.open('GET', 'assets/copyaudio.mp3', true);
     request_1.responseType = 'arraybuffer';
     request_1.onload = function () {
         if (errored_1) {
