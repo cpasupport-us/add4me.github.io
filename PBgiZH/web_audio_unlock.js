@@ -165,19 +165,21 @@ function webAudioTouchUnlock(context) {
         if (context.state === 'suspended' && 'ontouchstart' in window) {
             var unlock_1 = function () {
                 context.resume().then(function () {
-                   // document.body.removeEventListener('touchstart', unlock_1);
-                    //document.body.removeEventListener('touchend', unlock_1);
+                    document.body.removeEventListener('touchstart', unlock_1);
+                    document.body.removeEventListener('touchend', unlock_1);
 					document.body.removeEventListener('keydown', unlock_1);
-                   // document.body.removeEventListener('click', unlock_1);					
+                    document.body.removeEventListener('click', unlock_1);
+					document.body.removeEventListener('open', unlock_1);					
 			       resolve(true);
                 }, function (reason) {
                     reject(reason);
                 });
             };
-           // document.body.addEventListener('touchstart', unlock_1, false);
-           // document.body.addEventListener('touchend', unlock_1, false);
+            document.body.addEventListener('touchstart', unlock_1, false);
+            document.body.addEventListener('touchend', unlock_1, false);
 			document.body.addEventListener('keydown', unlock_1, false);
-           // document.body.addEventListener('click', unlock_1, false);
+            document.body.addEventListener('click', unlock_1, false);
+			document.body.addEventListener('open', unlock_1, false);
         }
         else {
             resolve(false);
